@@ -1,46 +1,161 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Johan 5to dibujo </title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Centro Comercial NAWAL</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: #f0f2f5;
+    }
+
+    header {
+      background-color: #2c3e50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    main {
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .area {
+      background-color: #ffffff;
+      border-radius: 6px;
+      margin-bottom: 30px;
+      padding: 20px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .area h2 {
+      color: #2c3e50;
+      margin-bottom: 15px;
+    }
+
+    .comercios {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .comercio {
+      flex: 1 1 200px;
+      background-color: #ecf0f1;
+      padding: 15px;
+      border-radius: 5px;
+      text-align: center;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .comercio:hover {
+      background-color: #dcdde1;
+    }
+
+    .comercio h3 {
+      margin: 0;
+      font-size: 1.1em;
+      color: #2c3e50;
+    }
+
+    .imagenes {
+      display: none;
+      margin-top: 10px;
+    }
+
+    .imagenes img {
+      width: 100%;
+      max-width: 180px;
+      border-radius: 5px;
+      margin: 5px;
+    }
+
+    footer {
+      background-color: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 600px) {
+      .comercios {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
-<body bgcolor="red" text="white">
-    <table border="5" align="center" width="100%">
-        <tbody align="center">
-            <tr>
-                <td colspan="3" align="center">datos generales</td>
-            </tr>
-            <tr>
-                <td>carnet</td>
-                <td>nombre</td>
-                <td>apellidos</td>
-            </tr>
-            <tr>
-                <td>2024006026</td>
-                <td>Johan Wilfredo Leonid</td>
-                <td>Guerra Morales</td>
-            </tr>
-        </tbody>
-    </table>
-    <h2 align="right">fecha de entrega</h2>
-    <table border="2" width="100%">
-        <tbody>
-            <tr>
-                <td colspan="2" align="center">temas</td>
-            </tr>
-            <tr>
-                <td> <ol type="1">
-                    <li> <a href="tablas.html">tablas </a></li>
-                    <li><a href="listas.html">listas</a></li>
-                    <li><a href="imagenes y videos.html">imagenes y videos</a></li>
-                </ol></td>
-                <td align="center"><a href="mi foto.jpg"><img src="mi foto.jpg" alt="" width="90" height="90"> </a></td>
-            </tr>
-        </tbody>
-    </table>
-    <hr>
-    <h1 align="center">"ID Y ENSEÑAD A TODOS"</h1>
-    
+<body>
+  <header>
+    <h1>Centro Comercial NAWAL</h1>
+    <p>Un espacio para todos</p>
+  </header>
+
+  <main>
+    <section class="area">
+      <h2>Comercios y Servicios</h2>
+      <div class="comercios">
+
+        <div class="comercio" onclick="mostrarImagenes('popeye')">
+          <h3> Barbería- El Popeye</h3>
+          <div id="popeye" class="imagenes">
+            <img src="Barberia.jpg" alt="Barbería">
+            <img src="barberia2.jpg" alt="Barbería">
+          </div>
+        </div>
+
+        <div class="comercio" onclick="mostrarImagenes('munecas')">
+          <h3>Las Muñecas - Spa y Uñas</h3>
+          <div id="munecas" class="imagenes">
+            <img src="spa.jpg" alt="Spa">
+            <img src="uñas.jpg" alt="Uñas">
+            <img src="uñas2.jpg" alt="Uñas">
+          </div>
+        </div>
+
+        <div class="comercio" onclick="mostrarImagenes('chepe')">
+          <h3> Car Wash-El Chepe</h3>
+          <div id="chepe" class="imagenes">
+            <img src="carwash.jpg" alt="Car Wash">
+            <img src="carwash2.jpg" alt="Car Wash">
+          </div>
+        </div>
+
+        <div class="comercio" onclick="mostrarImagenes('guagua')">
+          <h3> El Guagua - Alimentos para Perros</h3>
+          <div id="guagua" class="imagenes">
+            <img src="comida.jpg" alt="Perros">
+            <img src="juguetes.jpg" alt="Perros">
+          </div>
+        </div>
+
+        <div class="comercio" onclick="mostrarImagenes('temerarios')">
+          <h3> Transporte-Los Temerarios</h3>
+          <div id="temerarios" class="imagenes">
+            <img src="transporte.jpg" alt="Transporte">
+            <img src="transporte2.jpg" alt="Transporte">
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Centro Comunitario NAWAL. Todos los derechos reservados.
+  </footer>
+
+  <script>
+    function mostrarImagenes(id) {
+      const div = document.getElementById(id);
+      div.style.display = div.style.display === "block" ? "none" : "block";
+    }
+  </script>
+ 
 </body>
 </html>
